@@ -1,0 +1,29 @@
+name: fork
+
+on:
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    name: Fork on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Fork
+        uses: actions/checkout@v3
+        with:
+          repository: alexv587/westjourney-oss
+          ref: gh-pages
+          path: gh-pages
+      - name: Run shell
+        run: |
+          rm gh-pages/*.json
+      - name: Deploy Github Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: gh-pages
+          branch: gh-pages
