@@ -27,6 +27,8 @@ jobs:
           rm -rf gh-pages/.git
           cp -r .git/. gh-pages/.git
           cd gh-pages/
+          git config --global user.email "forker@fake.com"
+          git config --global user.name "forker"
           git checkout -b gh-pages
           git add 1*
           git commit -am "1*"
