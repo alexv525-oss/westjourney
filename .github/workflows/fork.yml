@@ -25,9 +25,9 @@ jobs:
         run: |
           rm gh-pages/*.json
           rm -rf gh-pages/.git
-          git config --global http.postBuffer 1048576000
       - name: Deploy Github Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: gh-pages
           branch: gh-pages
+          single-commit: false
