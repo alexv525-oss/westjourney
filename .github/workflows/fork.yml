@@ -51,6 +51,3 @@ jobs:
           git add 7*
           git commit -am "7*"
           git push
-          git add .
-          git commit -am "*"
-          git push
