@@ -22,6 +22,7 @@ jobs:
       - name: Run shell
         run: |
           rm gh-pages/*.json
+          rm -rf gh-pages/.git
       - name: Deploy Github Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
